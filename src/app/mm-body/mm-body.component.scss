@@ -1,0 +1,13 @@
+:host {
+  padding: 10px;
+  padding-top: 60px;
+  display: block;
+}
+
+@media (min-width: 768px) {
+  :host ::ng-deep {
+    padding: 20px;  // Для великих екранів
+    padding-top: 80px;
+    display: block;
+  }
+}

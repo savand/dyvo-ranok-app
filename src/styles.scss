@@ -1,0 +1,29 @@
+/* You can add global styles to this file, and also import other style files */
+
+// Functions first
+@import "../node_modules/bootstrap/scss/functions";
+
+// Variable overrides second
+$primary: #78b3ce;
+$secondary: #C1A1D3;
+// $secondary: #c9e6f0;
+$body-bg: #fbf8ef;
+$body-secondary-bg: #C1A1D3;
+// $font-family-base: 'Source Sans Pro', 'Lucida Grande', sans-serif;
+// $font-family-base: "Pangolin", cursive;
+$font-family-base: "Shantell Sans", cursive;
+
+
+// Required Bootstrap imports
+@import "../node_modules/bootstrap/scss/variables";
+@import "../node_modules/bootstrap/scss/variables-dark";
+@import "../node_modules/bootstrap/scss/mixins";
+@import "../node_modules/bootstrap/scss/maps";
+@import "../node_modules/bootstrap/scss/root";
+
+// Import the main Bootstrap styles
+@import "../node_modules/bootstrap/scss/bootstrap";
+
+body {
+    color: #4a4a4a;
+}

@@ -1,0 +1,42 @@
+<div id="orderme" class="card mb-4 rounded-3 shadow-sm border-primary">
+  <div class="card-header py-3 text-bg-primary border-primary">
+    <h4 class="my-0 fw-normal">Залишіть нам заявку і ми з Вами зв'яжемося</h4>
+  </div>
+  <div class="card-body">
+    <form class="row g-3" #personForm="ngForm">
+      <div class="col-12">
+        <label for="userName" class="form-label">Ваше імя</label>
+        <input
+          id="userName"
+          type="text"
+          class="form-control"
+          [(ngModel)]="person.userName"
+          name="userName"
+          maxlength="40"
+          autocomplete="on"
+        />
+      </div>
+      <div class="col-md-6">
+        <label for="tel" class="form-label">Номер телефону</label>
+        <input
+          id="tel"
+          type="tel"
+          class="form-control"
+          placeholder="+38 093 xxx xx xx"
+          [(ngModel)]="person.phoneNumber"
+          name="tel"
+          autocomplete="on"
+        />
+      </div>
+      <div class="col-12">
+        <button
+          type="submit"
+          class="w-100 btn btn-lg btn-primary"
+          (click)="onClick()"
+        >
+          Надіслати
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
