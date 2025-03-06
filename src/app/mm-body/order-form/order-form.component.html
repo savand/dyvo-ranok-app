@@ -33,6 +33,7 @@
           type="submit"
           class="w-100 btn btn-lg btn-primary"
           (click)="onClick()"
+          [class.disabled]="sendButtonIsDisabled"
         >
           Надіслати
         </button>

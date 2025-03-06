@@ -5,6 +5,7 @@ import {
   RecaptchaLoaderService,
   ReCaptchaV3Service,
 } from 'ng-recaptcha-2';
+import { BackendService } from '../../backend.service';
 
 @Component({
   selector: 'app-order-form',
@@ -18,6 +19,7 @@ import {
     },
     RecaptchaLoaderService,
     ReCaptchaV3Service,
+    BackendService,
   ],
 })
 export class OrderFormComponent {
@@ -25,17 +27,29 @@ export class OrderFormComponent {
     userName: null,
     phoneNumber: null,
   };
+  sendButtonIsDisabled: boolean = false;
   onClick() {
     this.recaptchaV3Service
       .execute('send_form')
       .subscribe((token) => this.handleToken(token));
+    this.sendButtonIsDisabled = true;
   }
 
   handleToken(token: string) {
-    //1) add logic of handling token on backend side and sending the form
-    //2) response from the server should be false (with error reasons specidied) or true
-    //3) finally show popup for user with form sending results
+    this.backendService
+      .sendOrderApplianceDromForm(token, this.person)
+      .subscribe({
+        next: (response) => {
+          alert(
+            `Ваше замовлення прийнято, ${this.person.userName}. Ближчим часом з Вами зв'яжеться наш менеджер для уточнення деталей`
+          );
+        },
+        error: (error) => console.error('Error:', error),
+      });
   }
 
-  constructor(private recaptchaV3Service: ReCaptchaV3Service) {}
+  constructor(
+    private recaptchaV3Service: ReCaptchaV3Service,
+    private backendService: BackendService
+  ) {}
 }
