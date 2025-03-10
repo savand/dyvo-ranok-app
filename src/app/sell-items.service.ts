@@ -18,7 +18,7 @@ export class SellItemsService {
       },
       {
         cardTitle: 'Двоспальний комплект',
-        imgUrl: 'photo/canvas.jpg',
+        imgUrl: 'photo/canvas-min.png',
         price: '2 850 грн',
         description: [
           'простирадло 230х260(з урахуванням висоти матрацу)',
@@ -28,7 +28,7 @@ export class SellItemsService {
       },
       {
         cardTitle: 'Євро',
-        imgUrl: 'photo/pack.jpg',
+        imgUrl: 'photo/pack-min.jpg',
         price: '3 200 грн',
         description: [
           'простирадло 240х260(з урахуванням висоти матрацу)',
