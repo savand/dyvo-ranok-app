@@ -1,15 +1,17 @@
 import { Component } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormControl, FormsModule, Validators } from '@angular/forms';
 import {
   RECAPTCHA_V3_SITE_KEY,
   RecaptchaLoaderService,
   ReCaptchaV3Service,
 } from 'ng-recaptcha-2';
 import { BackendService } from '../../backend.service';
+import { NgxMaskDirective } from 'ngx-mask';
+import { environment } from '../../../environments/environment';
 
 @Component({
   selector: 'app-order-form',
-  imports: [FormsModule],
+  imports: [FormsModule, NgxMaskDirective],
   templateUrl: './order-form.component.html',
   styleUrl: './order-form.component.scss',
   providers: [
@@ -24,18 +26,25 @@ import { BackendService } from '../../backend.service';
 })
 export class OrderFormComponent {
   person = {
-    userName: null,
-    phoneNumber: null,
+    userName: '',
+    phoneNumber: '',
   };
   sendButtonIsDisabled: boolean = false;
   onClick() {
-    this.recaptchaV3Service
-      .execute('send_form')
-      .subscribe((token) => this.handleToken(token));
+    if (environment.production) {
+      this.recaptchaV3Service
+        .execute('send_form')
+        .subscribe((token) => this.sendOrder(token));
+    } else {
+      console.log(
+        `The following message would be sent ${JSON.stringify(this.person)}`
+      );
+    }
+
     this.sendButtonIsDisabled = true;
   }
 
-  handleToken(token: string) {
+  sendOrder(token: string) {
     this.backendService
       .sendOrderApplianceDromForm(token, this.person)
       .subscribe({

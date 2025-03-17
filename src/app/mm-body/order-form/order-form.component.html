@@ -5,15 +5,18 @@
   <div class="card-body">
     <form class="row g-3" #personForm="ngForm">
       <div class="col-12">
-        <label for="userName" class="form-label">Ваше імя</label>
+        <label for="userName" class="form-label">
+          Як можемо до Вас звертатись
+        </label>
         <input
           id="userName"
           type="text"
           class="form-control"
           [(ngModel)]="person.userName"
           name="userName"
-          maxlength="40"
-          autocomplete="on"
+          required
+          maxlength="20"
+          minlength="3"
         />
       </div>
       <div class="col-md-6">
@@ -22,10 +25,13 @@
           id="tel"
           type="tel"
           class="form-control"
-          placeholder="+38 0xx xxx xx xx"
+          placeholder="+38 (0xx) xxx-xx-xx"
           [(ngModel)]="person.phoneNumber"
           name="tel"
-          autocomplete="off"
+          mask=" (000) 00-00-000"
+          prefix="+38"
+          required
+          [showMaskTyped]="true"
         />
       </div>
       <div class="col-12">
@@ -33,7 +39,7 @@
           type="submit"
           class="w-100 btn btn-lg btn-primary"
           (click)="onClick()"
-          [class.disabled]="sendButtonIsDisabled"
+          [disabled]="sendButtonIsDisabled || personForm.invalid"
         >
           Надіслати
         </button>
