@@ -1,6 +1,9 @@
 <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
   <div class="col" *ngFor="let item of items">
-    <div class="card mx-auto mb-4 rounded-3 shadow-sm" style="width: 18rem">
+    <div
+      class="card mx-auto mb-4 rounded-3 shadow-sm zoom-img"
+      style="width: 18rem"
+    >
       <img src="{{ item.imgUrl }}" class="card-img-top" alt="..." />
       <div class="card-body">
         <h5 class="card-title">{{ item.cardTitle }}</h5>
