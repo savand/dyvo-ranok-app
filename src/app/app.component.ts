@@ -2,16 +2,10 @@ import { Component } from '@angular/core';
 import { MmHeadComponent } from './mm-head/mm-head.component';
 import { MmFooterComponent } from './mm-footer/mm-footer.component';
 import { MmBodyComponent } from './mm-body/mm-body.component';
-import { BannerComponent } from './banner/banner.component';
 
 @Component({
   selector: 'app-root',
-  imports: [
-    MmHeadComponent,
-    MmBodyComponent,
-    MmFooterComponent,
-    BannerComponent,
-  ],
+  imports: [MmHeadComponent, MmBodyComponent, MmFooterComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })
