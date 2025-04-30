@@ -8,32 +8,58 @@ export class SellItemsService {
     return [
       {
         cardTitle: 'Півтораспальний комплект',
-        imgUrl: 'photo/mimimi.jpg',
-        price: '2 600 грн',
+        imgUrls: [
+          'photo/mimimi.jpg',
+          'photo/canvas-min.png',
+          'photo/pack-min.jpg',
+        ],
+        price: '2 795 грн',
         description: [
-          'простирадло 200х240(з урахуванням висоти матрацу)',
-          'підковдра 160х220',
-          'наволочка 50х70 або 70х70 (за бажанням) 2 шт',
+          'простирадло 200×240см',
+          'підковдра 160×220см',
+          'наволочка 50×70см — 2 шт',
         ],
       },
       {
         cardTitle: 'Двоспальний комплект',
-        imgUrl: 'photo/canvas-min.png',
-        price: '2 850 грн',
+        imgUrls: [
+          'photo/mimimi.jpg',
+          'photo/canvas-min.png',
+          'photo/pack-min.jpg',
+        ],
+        price: '3 120 грн',
         description: [
-          'простирадло 230х260(з урахуванням висоти матрацу)',
-          'підковдра 180х220',
-          'наволочка 50х70 або 70х70 (за бажанням) 2шт',
+          'простирадло 230×260см',
+          'підковдра 180×220см',
+          'наволочка 50×70см — 2шт',
         ],
       },
       {
         cardTitle: 'Євро',
-        imgUrl: 'photo/pack-min.jpg',
-        price: '3 200 грн',
+        imgUrls: [
+          'photo/mimimi.jpg',
+          'photo/canvas-min.png',
+          'photo/pack-min.jpg',
+        ],
+        price: '3 445 грн',
         description: [
-          'простирадло 240х260(з урахуванням висоти матрацу)',
-          'підковдра 200х220',
-          'наволочка 50х70 або 70х70 (за бажанням) 2шт',
+          'простирадло 240×260см',
+          'підковдра 200×220см',
+          'наволочка 50×70см — 2шт',
+        ],
+      },
+      {
+        cardTitle: 'Сімейний',
+        imgUrls: [
+          'photo/mimimi.jpg',
+          'photo/canvas-min.png',
+          'photo/pack-min.jpg',
+        ],
+        price: '4 310 грн',
+        description: [
+          'простирадло 240×260см',
+          'підковдра 160×220см — 2шт',
+          'наволочка 50×70см — 2шт',
         ],
       },
     ];
