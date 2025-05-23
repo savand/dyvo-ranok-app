@@ -1,43 +1,19 @@
 <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-4 mb-4 text-center">
-  <div class="col" *ngFor="let item of items; index as i">
-    <div
-      class="card mx-auto mb-4 rounded-3 shadow-sm zoom-img h-100 p-2"
-      style="width: 18rem"
-    >
-      <div
-        id="carousel-{{ i }}"
-        class="carousel slide"
-        data-bs-ride="carousel"
-        *ngIf="item.imgUrls?.length"
-      >
+  <div class="col" style="margin-top: 0.5rem" *ngFor="let item of items; index as i">
+    <div class="card mx-auto mb-4 rounded-3 shadow-sm zoom-img h-100 p-2" style="width: 18rem">
+      <div id="carousel-{{ i }}" class="carousel slide" data-bs-ride="carousel" *ngIf="item.imgUrls?.length">
         <div class="carousel-inner">
-          <div
-            *ngFor="let img of item.imgUrls; let j = index"
-            class="carousel-item"
-            [class.active]="j === 0"
-          >
-            <img
-              [src]="img"
-              class="d-block w-100 rounded-3"
-              alt="Image {{ j + 1 }}"
-            />
+          <div *ngFor="let img of item.imgUrls; let j = index" class="carousel-item" [class.active]="j === 0">
+            <img [src]="img" class="d-block w-100 rounded-3" alt="Image {{ j + 1 }}" />
           </div>
         </div>
-        <button
-          class="carousel-control-prev"
-          type="button"
-          attr.data-bs-target="#carousel-{{ i }}"
-          data-bs-slide="prev"
-        >
+        <button class="carousel-control-prev" type="button" attr.data-bs-target="#carousel-{{ i }}"
+          data-bs-slide="prev">
           <span class="carousel-control-prev-icon" aria-hidden="true"></span>
           <span class="visually-hidden">Previous</span>
         </button>
-        <button
-          class="carousel-control-next"
-          type="button"
-          attr.data-bs-target="#carousel-{{ i }}"
-          data-bs-slide="next"
-        >
+        <button class="carousel-control-next" type="button" attr.data-bs-target="#carousel-{{ i }}"
+          data-bs-slide="next">
           <span class="carousel-control-next-icon" aria-hidden="true"></span>
           <span class="visually-hidden">Next</span>
         </button>
